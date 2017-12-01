@@ -1,0 +1,39 @@
+{
+  "name": "checkdata",
+  "version": "0.0.1",
+  "description": "validate restful API data",
+  "main": "dist/checkData.js",
+  "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reamd/checkData.git"
+  },
+  "keywords": [
+    "restful",
+    "API",
+    "data"
+  ],
+  "author": "reamd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reamd/checkData/issues"
+  },
+  "homepage": "https://github.com/reamd/checkData#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-webserver": "^0.9.1"
+  }
+}

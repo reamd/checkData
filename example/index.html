@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="reamd">
+    <title>demo</title>
+</head>
+<body>
+<div>open the dev_tools and look up the result!</div>
+<script src="../dist/checkData.js"></script>
+<script>
+    (function () {
+        var res = {
+                errorCode: 0,
+                msg: '',
+                data: {
+                    name: 'reamd',
+                    age: 18,
+                    public: true,
+                    roles: {
+                        parent: false,
+                        children: true
+                    }
+                }
+            },
+        errorObj = null;
+
+        checkData.init({
+            getUserInfo: {
+                errorCode: 'number',
+                msg: 'string',
+                data: {
+                    name: 'string',
+                    age: 'number',
+                    public: 'boolean',
+                    roles: {
+                        parent: 'boolean',
+                        children: 'boolean'
+                    }
+                }
+            }
+        });
+
+        checkData.add({
+            getTask: {
+                taskId: 'number',
+                taskName: 'string',
+                send: 'boolean'
+            }
+        });
+
+        if(checkData.test('getUserInfo', res)) {
+            console.log('data error!');
+        }else {
+            console.log('data right!');
+        }
+
+        errorObj = checkData.use('getUserInfo', res);
+        if(errorObj[0]) {
+           console.log('error key:', errorObj[1])
+           console.error('error message:', errorObj[2])
+        }
+        checkData.clear('getUserInfo');
+    })();
+</script>
+</body>
+</html>
